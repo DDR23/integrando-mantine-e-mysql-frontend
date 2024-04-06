@@ -31,6 +31,7 @@ export default function FormNewUser() {
         onSubmit={onSubmit(createNewUser)}
       >
         <TextInput
+          withAsterisk
           label='Username'
           placeholder="your username"
           {...getInputProps('username')}
