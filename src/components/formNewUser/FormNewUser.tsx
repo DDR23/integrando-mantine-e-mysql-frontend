@@ -1,5 +1,7 @@
-import { Box, Button, Group, TextInput } from "@mantine/core"
+import { Box, Button, Group, LoadingOverlay, TextInput } from "@mantine/core"
 import { isEmail, isNotEmpty, useForm } from "@mantine/form"
+import usePost from "../../services/usePost"
+import { useState } from "react"
 
 export default function FormNewUser() {
   const { getInputProps, onSubmit, reset, values } = useForm({
@@ -13,10 +15,20 @@ export default function FormNewUser() {
     }
   })
 
-  function createNewUser(){
-    console.log(values)
+  const [posted, setPosted] = useState(false)
+
+  async function resetForm(){
+    await setPosted(false)
     reset()
   }
+
+  async function createNewUser(){
+    await setPosted(true)
+    resetForm()
+  }
+
+
+  const { isPosting } = usePost(`${import.meta.env.VITE_BASE_URL}/data/adicionar`, values, posted)
 
   return(
     <Box
@@ -26,7 +38,9 @@ export default function FormNewUser() {
       m={'auto'}
       p={'1rem'}
       bg={'dark'}
+      pos={'relative'}
     >
+      <LoadingOverlay visible={isPosting} zIndex={1000} overlayProps={{ blur: 2 }} />
       <form 
         onSubmit={onSubmit(createNewUser)}
       >
