@@ -7,6 +7,7 @@ import PageHome from './pages/pageHome/PageHome.tsx'
 import '@mantine/core/styles.css';
 import PageRegister from './pages/pageRegister/PageRegister.tsx'
 import PageUser from './pages/pageUser/PageUser.tsx'
+import '@mantine/notifications/styles.css';
 
 function RouteHandler() {
   const { tabValue } = useParams();

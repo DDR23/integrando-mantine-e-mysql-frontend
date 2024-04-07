@@ -17,31 +17,31 @@ export default function FormNewUser() {
 
   const [posted, setPosted] = useState(false)
 
-  async function resetForm(){
+  async function resetForm() {
     await setPosted(false)
     reset()
   }
 
-  async function createNewUser(){
+  async function createNewUser() {
     await setPosted(true)
     resetForm()
   }
 
 
-  const { isPosting } = usePost(`${import.meta.env.VITE_BASE_URL}/data/adicionar`, values, posted)
+  const { isPosted, isPosting, error, error409 } = usePost(`${import.meta.env.VITE_BASE_URL}/data/adicionar`, values, posted)
 
-  return(
+
+  return (
     <Box
       w={'20rem'}
       maw={'90vw'}
       h={'max-content'}
       m={'auto'}
       p={'1rem'}
-      bg={'dark'}
       pos={'relative'}
     >
       <LoadingOverlay visible={isPosting} zIndex={1000} overlayProps={{ blur: 2 }} />
-      <form 
+      <form
         onSubmit={onSubmit(createNewUser)}
       >
         <TextInput
