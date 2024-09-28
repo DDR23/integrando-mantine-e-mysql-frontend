@@ -28,7 +28,7 @@ export default function FormNewUser() {
   }
 
 
-  const { isPosted, isPosting, error, error409 } = usePost(`${import.meta.env.VITE_BASE_URL}/data/adicionar`, values, posted)
+  const { isPosting } = usePost(`${import.meta.env.VITE_BASE_URL}/data/adicionar`, values, posted)
 
 
   return (
