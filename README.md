@@ -3,7 +3,7 @@
 ## Sobre o projeto
 Essa atividade trata-se de um projeto divido em duas partes, onde este é usada pra aplicação de conhecimentos de typescript e a biblioteca mantine dev.
 
-Projeto hospedado em: 
+Projeto hospedado em: https://atividade-frontend-integracao-mantine-mysql-others.vercel.app/
 
 ## Comandos para rodar o projeto
 
