@@ -1,4 +1,4 @@
-# atividade---FRONTEND---integracao-mantine-mysql---OTHERS
+# integrando-mantine-e-mysql-frontend
 
 ## Sobre o projeto
 Essa atividade trata-se de um projeto divido em duas partes, onde este é usada pra aplicação de conhecimentos de typescript e a biblioteca mantine dev.
